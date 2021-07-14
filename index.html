@@ -1,0 +1,63 @@
+﻿<!DocType html>
+<html>
+<head>
+    <title>الصفحة الرائيسية لمتجر مرخس</title>
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <link rel="shortcut icon" href="wpaoa.png" />
+</head>
+<body>
+    <section>
+        <img src="bg.jpg" id="bg">
+        <img src="moon.png" id="moon">
+        <img src="mountain.png" id="mountain">
+        <img src="road.png" id="road">
+        <h2 id="text">الصفحة الرائيسية لمتجر البودي</h2>
+    </section>
+
+
+    <div class="scrollbar">
+        <div id="hi">
+            <p>مرحبا بك في متجرنا الجميل جدا</p>
+        </div>
+    </div>
+    <a href="shop.html">دخول المتجر</a>
+    <script>
+        const buttons = document.querySelectorAll('a');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                let x = e.clientX - e.target.offsetLeft;
+                let y = e.clientX - e.target.offsetTop;
+
+                let ripples = document.createElement('span');
+                ripples.style.left = x + 'px';
+                ripples.style.left = y + 'px';
+                this.appendChild(ripples);
+
+                setTimeout(() => {
+                    ripples.remove()
+                },1000);
+
+            })
+        })
+    </script>
+
+    <script type="text/javascript">
+        let bg = document.getElementById("bg");
+        let moon = document.getElementById("moon");
+        let mountain = document.getElementById("mountain");
+        let road = document.getElementById("road");
+        let text = document.getElementById("text");
+
+        window.addEventListener('scroll', function () {
+            var value = window.scrollY;
+
+            bg.style.top = value * 0.5 + 'px';
+            moon.style.left = -value * 0.5 + 'px';
+            mountain.style.top = -value * 0.15 + 'px';
+            text.style.top = value * 1 + 'px';
+            road.style.top = value * 0.15 + 'px';
+
+        })
+    </script>
+</body>
+</html>
