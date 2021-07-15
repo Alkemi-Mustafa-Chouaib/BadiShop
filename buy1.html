@@ -1,0 +1,129 @@
+﻿<!DocType html>
+<html>
+<head>
+    <title>عملية الشراء</title>
+    <link rel="shortcut icon" href="wpaoa.png" />
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="imgbx">
+                <img src="1.png">
+            </div>
+            <div class="contentbx">
+                <h2>PDF كتاب ترويض الحمير</h2> 
+                <a href="#">قم بالتحميل لأن</a>
+            </div>
+        </div>
+    </div>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:ital@1&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Amiri', serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #131313;
+        }
+        .container{
+            position: relative;
+        }
+        .container .card{
+            position: relative;
+            width: 320px;
+            height: 450px;
+            background: #232323;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+            .container .card:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #3aa9ff;
+                clip-path: circle(170px at 70% 10%);
+                transition: 0.5s ease-in-out;
+            }
+        .container .card:hover:before {
+                clip-path: circle(140px at 80% 20%);
+            }
+
+        .container .card:after {
+                content: 'الحمار';
+                position: absolute;
+                top: 30%;
+                left: 10%;
+                font-size: 12em;
+                font-weight: 800;
+                font-style: italic;
+                color: rgba(225,255,255,0.04);
+            }
+        .container .card .imgbx{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10000;
+            width: 100%;
+            height: 220px;
+            transition: 0.5s;
+        }
+        .container .card:hover .imgbx {
+                top: 0%;
+                transform: translateY(0%);
+            }
+            .container .card .imgbx img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                width: 150px;
+                height: 200px;
+            }
+            .container .card .contentbx{
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 100px;
+                text-align: center;
+                transition: 1s;
+                z-index: 10;
+            }
+        .container .card:hover .contentbx{
+            height: 210px;
+        }
+        .container .card .contentbx h2{
+            position: relative;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+        .container .card .contentbx a{
+            display: inline-block;
+            padding: 10px 20px;
+            background: #fff;
+            border-radius: 4px;
+            margin-top: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            color: #111;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 0.5s;
+        }
+        .container .card:hover .contentbx a{
+            opacity: 1;
+            transform: translateY(0px);
+            transition-delay: 0.75s;
+        }
+
+    </style>
+</body>
+</html>
